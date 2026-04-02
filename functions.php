@@ -100,8 +100,8 @@ function streamvault_fonts_url() {
     by chosen font(s), translate this to 'off'. Do not translate into your own language.
      */
     if ( 'off' !== _x( 'on', 'Google font: on or off', 'streamvault' ) ) {
-        $font_url = add_query_arg( 'family', urlencode( 'IBM+Plex+Sans:wght@300;400;500;600;700&Roboto:wght@300;400;500;700&display=swap' ), "//fonts.googleapis.com/css2" );
-    }
+	    $font_url = "https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap";
+	}
 
     return $font_url;
 }
@@ -161,7 +161,7 @@ if (class_exists('WooCommerce')) {
 }
 
 if (get_option( 'license_key_activated' )!='activated') {
-	require get_template_directory() . '/inc/validate-license.php';
+	// require get_template_directory() . '/inc/validate-license.php';
 }
 
 require get_template_directory() . '/inc/hooks.php';
@@ -278,9 +278,9 @@ function streamvault_import_files() {
 	);
 }
 
-if (get_option('license_key_activated') == 'activated') {
+// if (get_option('license_key_activated') == 'activated') {
 	add_filter( 'pt-ocdi/import_files', 'streamvault_import_files' );
-}
+// }
 
 // Default Home and Blog Setup
 function streamvault_after_import_setup() {
@@ -309,7 +309,7 @@ if (function_exists('is_plugin_active')) {
         if (file_exists($plugin_file)) {
             $plugin_data = get_plugin_data($plugin_file);
             
-            if ($plugin_data && version_compare($plugin_data['Version'], '1.1.6', '<')) {
+            if ($plugin_data && version_compare($plugin_data['Version'], '1.0.0', '<')) {
                 // Attempt to deactivate the plugin
                 $deactivated = deactivate_plugins('streamvault-element/streamvault-element.php');
                 

@@ -49,9 +49,9 @@ html {
 }
 
 body {
-    font-family: Poppins;
+    background: #05050A;
     margin: 0;
-    color: #444;
+    color: #fff;
     line-height: 26px;
 }
 
@@ -62,7 +62,7 @@ h4,
 h5,
 h6 {
     font-weight: 500;
-    color: #333;
+    color: #FFFFFF;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
