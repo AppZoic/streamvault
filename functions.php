@@ -38,20 +38,10 @@ if ( ! function_exists( 'streamvault_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
-		add_image_size( 'streamvault-1280x720', 1280,720,true );
+
 		add_image_size( 'streamvault-1280x650', 1280,650, array( 'center', 'top' ));
-		add_image_size( 'streamvault-800x500', 800,500,true );
-		add_image_size( 'streamvault-800x800', 800,800,true );
-		add_image_size( 'streamvault-320x320', 320,320,true );
-		add_image_size( 'streamvault-500x400', 500,400,true );
-		add_image_size( 'streamvault-576x456', 576,456,true );
-		add_image_size( 'streamvault-440x530', 440,530,true );
-		add_image_size( 'streamvault-462x294', 462,294,true );
-		add_image_size( 'streamvault-400x250', 400,250,true );
-		add_image_size( 'streamvault-270x270', 270,270,true );
-		add_image_size( 'streamvault-200x200', 200,200,true );
-		add_image_size( 'streamvault-125x158', 125,158,true );
-		add_image_size( 'streamvault-120x90', 120,90,true );
+		add_image_size( 'streamvault-522x760', 522,760,true );
+		add_image_size( 'streamvault-131x190', 131,190,true );
 		add_image_size( 'streamvault-100x100', 100,100,true );
 		add_image_size( 'streamvault-80x80', 80,80,true );
 		add_image_size( 'streamvault-32x32', 32,32,true );
