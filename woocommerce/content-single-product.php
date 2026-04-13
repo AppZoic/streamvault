@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 	return;
 } ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
-	<div class="container bg-white">
+	<div class="container">
 		<?php
 		/**
 		 * Hook: woocommerce_before_single_product.
@@ -67,7 +67,7 @@ if ( post_password_required() ) {
 		</div>
 	</div>
 
-	<div class="container bg-white mt-5">
+	<div class="container mt-5">
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
@@ -80,7 +80,7 @@ if ( post_password_required() ) {
 	?>
 	</div>
 	
-	<div class="container bg-white mt-5">
+	<div class="container mt-5">
 		<?php woocommerce_output_related_products() ?>
 	</div>
 </div>

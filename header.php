@@ -85,7 +85,7 @@ $signup_btn_url = !empty( $streamvault_opt['signup_btn_url'] ) ? $streamvault_op
 	if (strpos(home_url(add_query_arg(array(), $wp->request)), '/user/') === false){ ?>	    	
 		<header class="streamvault-header">
 		    <div class="streamvault-header__middle">
-		        <div class="container">
+		        <div class="container-fluid">
 		            <div class="row align-items-center">
 		                <div class="col-12">
 		                    <div class="streamvault-header__inside">
@@ -132,10 +132,10 @@ $signup_btn_url = !empty( $streamvault_opt['signup_btn_url'] ) ? $streamvault_op
 
 		<!-- Secondary Nav -->
 	    <div class="d-none d-xl-block">
-	      <div class="container">
+	      <div class="container-fluid">
 	        <div class="position-relative">
 	          <nav
-	            class="secondary-nav-container bg-white position-absolute w-100 start-0 z-3 border-top"
+	            class="secondary-nav-container position-absolute w-100 start-0 z-3 border-top"
 	          >
 	          	<?php if ( has_nav_menu( 'secondary_menu' ) ) {
 	          		wp_nav_menu( array(
@@ -152,7 +152,7 @@ $signup_btn_url = !empty( $streamvault_opt['signup_btn_url'] ) ? $streamvault_op
 	    <!-- Secondary Nav End -->
     <?php } ?>
 
-	<?php if ( !is_page_template( 'custom-landing-page.php' ) && !is_404() && strpos(home_url(add_query_arg(array(), $wp->request)), '/user/') === false) { ?>
+	<?php if ( !is_page_template( 'custom-landing-page.php' ) && !is_singular( 'videos' ) && !is_404() && strpos(home_url(add_query_arg(array(), $wp->request)), '/user/') === false) { ?>
 		<section class="w-breadcrumb-area">
 	        <div class="container">
 	          <div class="row">

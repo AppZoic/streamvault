@@ -433,7 +433,7 @@ function streamvault_comment_list($comment, $args, $depth) {
     }
 
     $rating = get_comment_meta($comment->comment_ID, 'rating', true);
-    $additional_class = 'bg-white blog-single-comment ';
+    $additional_class = 'blog-single-comment ';
 ?>
 
 <<?php echo esc_html($tag); ?> <?php comment_class( $additional_class . ($args['has_children'] ? '' : 'parent ') ); ?> id="comment-<?php comment_ID(); ?>" itemscope itemtype="http://schema.org/Comment">
@@ -442,7 +442,7 @@ function streamvault_comment_list($comment, $args, $depth) {
 		if ($rating && empty($args['has_children'])) { ?>
 
 			<!-- Buyer Review -->
-            <div class="bg-white">
+            <div class="">
                 <div>
                     <div class="d-flex justify-content-between mb-3">
                     	<div class="d-flex">

@@ -64,7 +64,7 @@ if ( have_comments() ) { ?>
 
 <div class="row">
 	<div class="col-12">
-		<div class="bg-white comment-form mt-5">
+		<div class="comment-form mt-5">
 			<?php
 
 			// Define the default comment form fields

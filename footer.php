@@ -35,7 +35,7 @@ $backtotop = isset( $streamvault_opt['backtotop'] ) ? $streamvault_opt['backtoto
 			}
 			?>
 			<div class="footer-copyright py-4">
-				<div class="container">
+				<div class="container-fluid">
 				  <div class="row row-gap-4 justify-content-between">
 				    <div class="col-auto">
 				      <div>
