@@ -2370,67 +2370,216 @@ Service Card
     /* padding-right: 10px; */
 }
 
+/* video wrapper */
+.video-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+#mainVideo {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+/* custom controls overlay */
+.custom-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.video-wrapper:hover .custom-controls {
+    opacity: 1;
+}
+
+.ctrl-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.ctrl-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.time-display {
+    font-size: 0.75rem;
+    font-family: monospace;
+}
+
+.seek-progress,
+.volume-slider {
+    height: 4px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.seek-progress::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ff6b4a;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider {
+    width: 80px;
+}
+
+/* video meta */
+.video-meta {
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.channel-avatar-sm {
+    width: 44px;
+    height: 44px;
+    background: #ff6b4a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.action-btn {
+    background: #2a2a2a;
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+
+.action-btn.liked {
+    background: #ff6b4a;
+}
+
+.description-box {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* right sidebar cards */
+.rec-item {
+    display: flex;
+    gap: 0.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.rec-item:hover {
+    background: #1f1f1f;
+}
+
+.rec-thumb {
+    width: 168px;
+    aspect-ratio: 16 / 9;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.rec-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rec-info .rec-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+}
+
+.rec-channel {
+    font-size: 0.7rem;
+    color: #aaa;
+}
+
+.rec-meta {
+    font-size: 0.65rem;
+    color: #888;
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* playlist card */
+.playlist-card {
+    background: #121212;
+    border-radius: 16px;
+    border: 1px solid #2a2a2a;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.playlist-item:hover {
+    background: #1f1f1f;
+}
+
+.playlist-num {
+    font-size: 0.7rem;
+    color: #ff6b4a;
+    width: 28px;
+}
+
+@media (max-width: 768px) {
+    .rec-thumb {
+        width: 120px;
+    }
+
+    .search-bar-bg input {
+        width: 140px;
+    }
+}
+
 /*******************
 Service Card End  
 ********************/
 
-/*******************
-About Pages  
-********************/
-
-/***********************
-Service Details Start  
-***********************/
-.job-details-slider-img img {
-    border-radius: 16px;
-}
-
-.service-details-content {
-    padding: 20px;
-    border-radius: 16px;
-}
-
-.service-details-content .swiper-slide img {
-    border-radius: 16px;
-
-}
-
-.service-details-title {
-    font-size: 40px;
-    line-height: 50px;
-}
-
-.service-details-subtitle {
-    font-size: 24px;
-    line-height: 26px;
-    color: var(--dark-300);
-}
-
-.service-title-secondary {
-    font-size: 18px;
-}
-
-.swiper-nav-btn .swiper-button-next,
-.swiper-nav-btn .swiper-button-prev {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: var(--white);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.swiper-nav-btn .swiper-button-next::after,
-.swiper-nav-btn .swiper-button-prev::after {
-    font-size: 16px;
-    color: var(--dark-200);
-}
-
-.service-review-count {
-    width: 200px;
-    height: 190px;
-}
 
 .review-progress-wrapper {
     background-color: #d2d2d2;
@@ -2471,54 +2620,6 @@ Service Details Start
 .seller-reply {
     border-top: 1px solid var(--dark-50);
 }
-
-.add-extra {
-    text-align: center;
-    display: block;
-}
-
-/*Package Tabs
- */
-.package-tabs {
-    background-color: var(--dark-50);
-    padding: 16px 30px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.package-tab-content {
-    padding: 30px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.package-tab-btn {
-    color: var(--dark-300);
-    font-size: 18px;
-    font-family: var(--main-font-family);
-}
-
-.package-tab-btn.active {
-    color: var(--lime-300);
-    text-decoration: underline;
-}
-
-.package-name {
-    font-size: 18px;
-}
-
-.package-price {
-    font-size: 24px;
-}
-
-.package-title {
-    font-size: 18px;
-    color: var(--dark-200);
-}
-
-/***********************
-Service Details End  
-***********************/
 
 /***********************
 Freelancer Details Start  
@@ -3465,6 +3566,7 @@ Login Pages Start
 .social-login .social-login-item i {
     font-size: 28px;
 }
+
 /*******************
 Login Pages End  
 ********************/
