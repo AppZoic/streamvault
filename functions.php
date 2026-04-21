@@ -418,7 +418,6 @@ function streamvault_related_posts(){
     <?php } 
 }
 
-
 // Comment List
 function streamvault_comment_list($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
@@ -438,10 +437,10 @@ function streamvault_comment_list($comment, $args, $depth) {
 
 <<?php echo esc_html($tag); ?> <?php comment_class( $additional_class . ($args['has_children'] ? '' : 'parent ') ); ?> id="comment-<?php comment_ID(); ?>" itemscope itemtype="http://schema.org/Comment">
 
-	<?php if (get_post_type() == 'services'){
+	<?php if (get_post_type() == 'movies'){
 		if ($rating && empty($args['has_children'])) { ?>
 
-			<!-- Buyer Review -->
+			<!-- Buyer Review (with rating) -->
             <div class="">
                 <div>
                     <div class="d-flex justify-content-between mb-3">
@@ -468,15 +467,50 @@ function streamvault_comment_list($comment, $args, $depth) {
                             </div>
                             <div>
                                 <h4 class="text-18 text-dark-300 fw-semibold"><?php echo esc_html($comment->comment_author); ?></h4>
-                                <p class="text-dark-200 fs-6"><?php echo esc_html(get_user_meta($comment->comment_author, 'billing_country', true)); ?></p>
+                                <p class="text-dark-200 fs-6"><?php echo esc_html(get_user_meta($comment->user_id, 'billing_country', true)); ?></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+		<?php } else { 
+			// Display regular comments (without ratings) for movies
+		?>
+
+			<div class="d-flex flex-column flex-md-row gap-3">
+			    <div>
+			        <?php echo get_avatar( $comment, 90 ); ?>
+			    </div>
+			    <div>
+			        <div class="d-flex align-items-center justify-content-between">
+			            <h4 class="text-18 fw-semibold text-dark-300">
+				        	<?php echo get_comment_author_link(); ?>
+				      	</h4>
+			            <p class="fs-6 text-dark-200"><?php comment_date('jS F Y , '); ?><?php comment_time(); ?></p>
+			        </div>
+			        <p class="py-2 text-dark-200 fs-6">
+			            <?php comment_text(); ?>
+			        </p>
+			        <?php comment_reply_link(array_merge($args, array(
+						    'add_below' => $add_below,
+						    'depth' => $depth,
+						    'max_depth' => $args['max_depth'],
+						    'reply_text' => '<i class="fas fa-reply-all"></i> Reply',
+						    'class' => 'comment-reply-btn d-flex gap-2 align-items-center'
+						)));
+
+						if ($comment->comment_approved == '0') { ?>
+					        <p class="comment-meta-item"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'streamvault' ); ?></p>
+					    <?php } ?>
+					    <?php edit_comment_link('<p class="comment-meta-item float-end">' . esc_html__('Edit this comment', 'streamvault') . '</p>', '', ''); ?>
+			    </div>
+			</div>
+
 		<?php }
-	} else { ?>
+	} else { 
+		// For non-movie post types (regular blog posts)
+	?>
 
 		<div class="d-flex flex-column flex-md-row gap-3">
 		    <div>
@@ -487,10 +521,10 @@ function streamvault_comment_list($comment, $args, $depth) {
 		            <h4 class="text-18 fw-semibold text-dark-300">
 			        	<?php echo get_comment_author_link(); ?>
 			      	</h4>
-		            <p class="fs-6 text-dark-200"><?php comment_date('jS F Y , ').comment_time() ?></p>
+		            <p class="fs-6 text-dark-200"><?php comment_date('jS F Y , '); ?><?php comment_time(); ?></p>
 		        </div>
 		        <p class="py-2 text-dark-200 fs-6">
-		            <?php comment_text() ?>
+		            <?php comment_text(); ?>
 		        </p>
 		        <?php comment_reply_link(array_merge($args, array(
 				    'add_below' => $add_below,
@@ -501,11 +535,12 @@ function streamvault_comment_list($comment, $args, $depth) {
 				)));
 
 				if ($comment->comment_approved == '0') { ?>
-			        <p class="comment-meta-item"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'streamvault' ) ?></p>
+			        <p class="comment-meta-item"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'streamvault' ); ?></p>
 			    <?php } ?>
 			    <?php edit_comment_link('<p class="comment-meta-item float-end">' . esc_html__('Edit this comment', 'streamvault') . '</p>', '', ''); ?>
 		    </div>
 		</div>
+
 <?php }
 }
 
@@ -518,24 +553,6 @@ function streamvault_comment_field_to_bottom( $fields ) {
     return $fields;
 }
 add_filter( 'comment_form_fields', 'streamvault_comment_field_to_bottom' );
-
-
-function streamvault_display_rating_field_for_logged_in_users($commenter) {
-	if (get_post_type() == 'services') {
-	    echo '<div class="col-lg-12">
-	            <ul class="streamvault-rating list-inline">
-		            <li><i class="fal fa-star" data-rating="1"></i></li>
-		            <li><i class="fal fa-star" data-rating="2"></i></li>
-		            <li><i class="fal fa-star" data-rating="3"></i></li>
-		            <li><i class="fal fa-star" data-rating="4"></i></li>
-		            <li><i class="fal fa-star" data-rating="5"></i></li>
-		        </ul>
-		        <input type="hidden" name="rating" id="rating" value="1">
-	         </div>';
-    }
-}
-add_action('comment_form_logged_in', 'streamvault_display_rating_field_for_logged_in_users');
-
 
 function streamvault_save_comment_rating($comment_id) {
     if (isset($_POST['rating'])) {
