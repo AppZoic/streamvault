@@ -152,7 +152,7 @@ $signup_btn_url = !empty( $streamvault_opt['signup_btn_url'] ) ? $streamvault_op
 	    <!-- Secondary Nav End -->
     <?php } ?>
 
-	<?php if ( !is_page_template( 'custom-landing-page.php' ) && !is_singular( 'movies' ) && !is_singular( 'tv_shows' )  && !is_singular( 'live_tv' ) && !is_singular( 'videos' ) && !is_404() && strpos(home_url(add_query_arg(array(), $wp->request)), '/user/') === false) { ?>
+	<?php if ( !is_page_template( 'custom-landing-page.php' ) && !is_singular( 'movies' ) && !is_singular( 'tv_shows' )  && !is_singular( 'live_tv' )  && !is_singular( 'celebrities' ) && !is_singular( 'videos' ) && !is_404() && strpos(home_url(add_query_arg(array(), $wp->request)), '/user/') === false) { ?>
 		<section class="w-breadcrumb-area">
 	        <div class="container">
 	          <div class="row">

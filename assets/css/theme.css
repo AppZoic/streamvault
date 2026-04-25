@@ -826,11 +826,12 @@ body {
     color: #fff;
 }
 
-/* sub-menu Menu */
+/* Base submenu styling for all levels */
 .streamvault-header .navigation li .children,
 .streamvault-header .navigation li .sub-menu {
     position: absolute;
-    top: 62px;
+    top: 0;
+    left: 100%;
     width: 220px;
     background: #fff;
     z-index: 5222;
@@ -847,12 +848,14 @@ body {
     border: 1px solid #cccccc47;
 }
 
-
-.streamvault-header .navigation li .children ul.children {
-    top: 30px;
-    right: -220px;
+/* First level submenu - position below parent */
+.streamvault-header .navigation>li>.children,
+.streamvault-header .navigation>li>.sub-menu {
+    top: 78px  ;
+    left: 0;
 }
 
+/* Hover effect for all levels */
 .streamvault-header .navigation li:hover>.children,
 .streamvault-header .navigation li:hover>.sub-menu {
     opacity: 1;
@@ -860,18 +863,22 @@ body {
     transform: translateY(0px);
 }
 
+/* Ensure nested submenus don't overlap */
 .streamvault-header .navigation li .children li,
 .streamvault-header .navigation li .sub-menu li {
     display: block;
     margin: 0;
     text-align: left;
+    position: relative;
 }
 
+/* Remove border from last item */
 .streamvault-header .navigation li .children li:last-child,
 .streamvault-header .navigation li .sub-menu li:last-child {
     border: none;
 }
 
+/* Link styling */
 .streamvault-header .navigation li .children li a,
 .streamvault-header .navigation li .sub-menu li a {
     color: #647082 !important;
@@ -881,6 +888,7 @@ body {
     border-radius: 0;
     font-weight: 400;
     border-bottom: 1px solid #cccccc40;
+    position: relative;
 }
 
 .streamvault-header .navigation li .children li:last-child a,
@@ -895,19 +903,22 @@ body {
     margin-left: 5px;
 }
 
+/* Arrow icon on parent items */
 .streamvault-header .navigation li a i {
     margin-left: 5px;
     font-weight: 600;
     font-size: 12px;
 }
 
+/* Remove pseudo-elements that might interfere */
 .streamvault-header .navigation li .children li a::before,
 .streamvault-header .navigation li .sub-menu li a::before {
     display: none;
 }
 
+/* Top level parent arrow (down arrow) */
 .streamvault-header li.page_item_has_children>a::after,
-.streamvault-header li.menu-item-has-children a::after {
+.streamvault-header li.menu-item-has-children>a::after {
     margin-left: 7px;
     font-size: 14px;
     font-family: "Font Awesome 5 Pro";
@@ -915,21 +926,34 @@ body {
     content: "\f107";
 }
 
-
-.streamvault-header li.page_item_has_children>.children li.page_item_has_children>a::after,
-.streamvault-header li.menu-item-has-children>.sub-menu li.menu-item-has-children>a::after {
+/* Nested parent arrow (right arrow) */
+.streamvault-header .navigation li .children li.page_item_has_children>a::after,
+.streamvault-header .navigation li .sub-menu li.menu-item-has-children>a::after {
     position: absolute;
     right: 20px;
-    margin-left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 14px;
     font-family: "Font Awesome 5 Pro";
     font-weight: 600;
     content: "\f105";
 }
 
-.streamvault-header li.menu-item-has-children .children li a::after,
-.streamvault-header li.menu-item-has-children .sub-menu li a::after {
-    display: none;
+/* Optional: Adjust left-side submenu positioning if needed */
+.streamvault-header .navigation li .children li .children,
+.streamvault-header .navigation li .sub-menu li .sub-menu {
+    top: -15px;
+    left: 100%;
+}
+
+/* Prevent submenu from going off-screen (optional) */
+@media (min-width: 1200px) {
+
+    .streamvault-header .navigation li .children li:last-child .children,
+    .streamvault-header .navigation li .sub-menu li:last-child .sub-menu {
+        left: auto;
+        right: 100%;
+    }
 }
 
 .hd-inner-border {
@@ -2711,6 +2735,7 @@ Service Card
     flex-wrap: wrap;
     gap: 8px;
 }
+
 .hashtag-link {
     display: inline-block;
     color: #3b82f6;
@@ -2721,25 +2746,31 @@ Service Card
     border-radius: 20px;
     transition: all 0.2s ease;
 }
+
 .hashtag-link:hover {
     background: rgba(59, 130, 246, 0.2);
     color: #2563eb;
     text-decoration: none;
 }
+
 .rec-title a {
     color: inherit;
     text-decoration: none;
 }
+
 .rec-title a:hover {
     color: #ff6b4a;
 }
+
 .playlist-title a {
     color: inherit;
     text-decoration: none;
 }
+
 .playlist-title a:hover {
     color: #ff6b4a;
 }
+
 /*******************
 Service Card End  
 ********************/
