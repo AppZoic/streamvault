@@ -51,47 +51,6 @@ body {
     }
 }
 
-/* Predefine Class */
-.bg-white {
-    background-color: #fff;
-}
-
-.bg-offWhite {
-    background-color: #f7f5f0;
-}
-
-.bg-darkGreen {
-    background-color: #13544e;
-}
-
-.bg-dark-300 {
-    background-color: #06131c;
-}
-
-.bg-blue-300 {
-    background-color: #4b83fc;
-}
-
-.bg-lime-300 {
-    background-color: #22be0d;
-}
-
-.bg-darkLime {
-    background-color: #14a800;
-}
-
-.text-dark-200 {
-    color: #5b5b5b;
-}
-
-.text-dark-300 {
-    color: #06131c;
-}
-
-.text-lime-300 {
-    color: #22be0d;
-}
-
 .text-14 {
     font-size: 14px;
 }
@@ -223,7 +182,7 @@ body {
 
 /* Button */
 .header-btn {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     padding: 16px 32px;
     border-radius: 30px;
     color: #fff;
@@ -253,14 +212,14 @@ body {
 
 .w-btn-md {
     padding: 16px 30px;
-    color: #5b5b5b;
+    color: #fff;
     font-size: 18px;
     border-radius: 30px;
     background-color: #fff;
 }
 
 .w-btn-md:hover {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
@@ -277,7 +236,7 @@ body {
 #place_order,
 .w-btn-secondary-lg {
     color: #fff;
-    background-color: #22be0d;
+    background-color: #6e52c3;
     padding: 16px 32px;
     border-radius: 30px;
     display: flex;
@@ -291,7 +250,7 @@ body {
 
 .w-btn-black-lg {
     color: #fff;
-    background-color: #06131c;
+    background-color: #fff;
     padding: 16px 32px;
     border-radius: 30px;
     display: flex;
@@ -319,11 +278,11 @@ body {
 
 .w-btn-primary-sm {
     color: #fff;
-    background-color: #22be0d;
+    background-color: #6e52c3;
 }
 
 .w-btn-gray-sm {
-    color: #5b5b5b;
+    color: #fff;
     background-color: #edebe7;
     padding: 14px 24px;
     border-radius: 30px;
@@ -332,7 +291,7 @@ body {
 
 .w-btn-secondary-sm {
     color: #fff;
-    background-color: #22be0d;
+    background-color: #6e52c3;
     padding: 14px 24px;
     border-radius: 30px;
     text-align: center;
@@ -342,22 +301,22 @@ body {
 }
 
 .w-btn-primary-icon {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
 .w-btn-secondary-icon {
     background-color: #edebe7;
-    color: #06131c;
+    color: #fff;
 }
 
 .w-btn-secondary-icon:hover {
     color: #fff;
-    background-color: #22be0d;
+    background-color: #6e52c3;
 }
 
 .w-btn-link {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 16px;
     position: relative;
     display: inline-flex;
@@ -371,13 +330,13 @@ body {
     width: 0;
     left: 0;
     bottom: -5px;
-    background: #22be0d;
+    background: #6e52c3;
     height: 1px;
     transition: 0.3s ease-out;
 }
 
 .w-btn-link svg {
-    color: #5b5b5b;
+    color: #fff;
     transition: 0.2s;
     position: relative;
     width: 15px;
@@ -386,7 +345,7 @@ body {
 }
 
 .w-btn-link:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .w-btn-link:hover::before {
@@ -395,7 +354,7 @@ body {
 
 .w-btn-link:hover svg {
     transform: translateX(4px);
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .w-btn-primary-xl {
@@ -406,7 +365,7 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: #06131c;
+    color: #fff;
     gap: 10px;
     flex-shrink: none;
     line-height: 26px;
@@ -417,7 +376,7 @@ body {
 }
 
 .w-btn-secondary-xl {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     padding: 16px 60px;
     display: inline-flex;
@@ -470,7 +429,7 @@ body {
 .w-btn-secondary-xl:hover,
 .w-btn-primary-lg:hover,
 .w-btn-primary-xl:hover {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
@@ -482,7 +441,7 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: #06131c;
+    color: #fff;
     line-height: 1;
     gap: 10px;
     transition: all 0.3s ease-in-out;
@@ -535,13 +494,13 @@ body {
 }
 
 .custom-dropdown-menu.sub-menu {
-    color: #5b5b5b;
+    color: #fff;
     display: inline-flex;
     justify-content: space-between;
 }
 
 .custom-dropdown-menu.sub-menu:hover {
-    color: #22be0d;
+    color: #6e52c3;
     background-color: #edebe7;
 }
 
@@ -549,14 +508,14 @@ body {
     height: 18px;
     width: 18px;
     border-radius: 70%;
-    background: #22be0d;
+    background: #6e52c3;
     pointer-events: auto;
     -webkit-appearance: none;
 }
 
 .custom-dropdown-menu.sub-menu .form-check-input:checked {
-    background-color: #22be0d;
-    border-color: #22be0d;
+    background-color: #6e52c3;
+    border-color: #6e52c3;
 }
 
 /* Custom Pagination */
@@ -575,12 +534,12 @@ body {
     align-items: center;
     padding: 0;
     border-radius: 50% !important;
-    color: #5b5b5b;
+    color: #fff;
     border-color: #d9d9d9;
 }
 
 .custom-page-link.page-link:hover {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     border: transparent;
 }
@@ -598,13 +557,13 @@ body {
 .custom-page-item.page-item .page-link.prev:hover,
 .custom-page-item.page-item .page-link.next:hover,
 .custom-page-item.page-item .page-link.next:hover {
-    color: #22be0d;
+    color: #6e52c3;
     background-color: transparent;
 }
 
 .custom-page-item.page-item.active>.page-link,
 .page-link.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     border: transparent;
 }
@@ -613,12 +572,12 @@ body {
 /* Section */
 .section-subtitle {
     font-size: 18px;
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .section-title {
     font-size: 40px;
-    color: #06131c;
+    color: #fff;
     line-height: 50px;
     margin-bottom: 10px;
 }
@@ -631,7 +590,7 @@ body {
 
 .section-desc {
     font-size: 18px;
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .section-desc-light {
@@ -650,15 +609,15 @@ body {
     align-items: center;
     background-color: transparent;
     border-radius: 50%;
-    color: #22be0d;
-    border: 1px solid #22be0d;
+    color: #6e52c3;
+    border: 1px solid #6e52c3;
 }
 
 .swiper-prev:hover,
 .swiper-next:hover {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
-    border: 1px solid #22be0d;
+    border: 1px solid #6e52c3;
 }
 
 .swiper-prev svg,
@@ -1520,12 +1479,12 @@ body {
     padding: 16px 21px;
     display: block;
     font-size: 16px;
-    color: #5b5b5b;
+    color: #fff;
     white-space: nowrap;
 }
 
 .secondary-nav li a:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .secondary-nav li:last-child button {
@@ -1541,13 +1500,13 @@ body {
 /* Category Modal */
 .category-nav ul li a {
     font-size: 16px;
-    color: #5b5b5b;
+    color: #fff;
     line-height: 30px;
     transition: all 0.3s ease-in;
 }
 
 .category-nav ul li a:hover {
-    color: #22be0d;
+    color: #6e52c3;
     text-decoration: underline;
 }
 
@@ -1572,7 +1531,7 @@ Breadcrumb
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(90deg, #06131c 0%, rgba(6, 19, 28, 0) 100%);
+    background-image: linear-gradient(90deg, #fff 0%, rgba(6, 19, 28, 0) 100%);
 }
 
 .w-breadcrumb .breadcrumb-item a {
@@ -1580,7 +1539,7 @@ Breadcrumb
 }
 
 .w-breadcrumb.breadcrumb .breadcrumb-item.active {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
@@ -1637,7 +1596,7 @@ Hero Start
 }
 
 .highlighted-text {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .hero-form-wrapper {
@@ -1658,7 +1617,7 @@ Hero Start
 }
 
 .hero-form-btn {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -1762,7 +1721,7 @@ Feature Categories
 
 .feature-category-link a {
     font-size: 18px;
-    color: #06131c;
+    color: #fff;
     display: block;
     margin-bottom: 10px;
     white-space: nowrap;
@@ -1770,15 +1729,15 @@ Feature Categories
 }
 
 .feature-category-link a:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .feature-category-desc {
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .feature-category-card:hover {
-    border-color: #22be0d;
+    border-color: #6e52c3;
 }
 
 /**********************
@@ -1811,17 +1770,17 @@ Recent Job Post
 
 .job-type-badge-primary {
     background-color: #fff;
-    color: #06131c;
+    color: #fff;
 }
 
 .job-type-badge-secondary {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
 .job-type-badge-tertiary {
     background-color: #edebe7;
-    color: #06131c;
+    color: #fff;
 }
 
 .job-post-icon {
@@ -1841,13 +1800,13 @@ Recent Job Post
 
 .job-post-subtitle {
     font-size: 18px;
-    color: #06131c;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .job-post-title a {
     font-size: 18px;
-    color: #06131c;
+    color: #fff;
     margin-bottom: 35px;
     display: block;
     text-align: center;
@@ -1871,7 +1830,7 @@ Recent Job Post
 }
 
 .job-post-horizontal-title a {
-    color: #06131c;
+    color: #fff;
     font-size: 18px;
     line-height: 1;
     position: relative;
@@ -1938,7 +1897,7 @@ Recent Job Post End
 
 .widget-video-btn {
     background-color: #fff;
-    color: #22be0d;
+    color: #6e52c3;
     width: 74px;
     height: 74px;
     display: inline-flex;
@@ -1983,13 +1942,13 @@ Business Widget End
 
 .cta-counter-title {
     font-size: 40px;
-    color: #06131c;
+    color: #fff;
 }
 
 .cta-counter-desc {
     font-size: 16px;
     line-height: 26px;
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .cta-img img {
@@ -2009,7 +1968,7 @@ Business Widget End
 .cta-btn-link {
     padding: 20px 30px;
     border-radius: 50px;
-    background-color: #22be0d;
+    background-color: #6e52c3;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -2038,7 +1997,7 @@ Business Widget End
   background-color: #f7f5f0;
 } */
 .top-seller-card.style-two:hover .w-btn-primary-lg {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
@@ -2052,12 +2011,12 @@ Business Widget End
     border-radius: 30px;
     padding: 4px 8px;
     font-size: 10px;
-    color: #06131c;
+    color: #fff;
     display: inline-block;
 }
 
 .seller-type-badge.green {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
@@ -2071,22 +2030,22 @@ Business Widget End
     font-size: 24px;
     line-height: 1;
     margin-bottom: 10px;
-    color: #06131c;
+    color: #fff;
 }
 
 .top-seller-title {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 14px;
     margin-bottom: 5px;
 }
 
 .top-seller-rating {
-    color: #06131c;
+    color: #fff;
     gap: 5px;
 }
 
 .top-seller-review {
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .freelancer-tab-link {
@@ -2101,7 +2060,7 @@ Business Widget End
 }
 
 .freelancer-tab-link.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
 }
 
 /* Top Seller Card End*/
@@ -2112,7 +2071,7 @@ Testimonial
 .testimonial-card {
     border-radius: 12px;
     position: relative;
-    border-bottom: 4px solid #22be0d;
+    border-bottom: 4px solid #6e52c3;
 }
 
 .testimonial-content {
@@ -2121,12 +2080,12 @@ Testimonial
 }
 
 .testimonial-title {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 18px;
 }
 
 .testimonial-feedback {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 16px;
     line-height: 26px;
     padding-top: 20px;
@@ -2144,11 +2103,11 @@ Testimonial
 
 .testimonial-author-name {
     font-size: 18px;
-    color: #06131c;
+    color: #fff;
 }
 
 .testimonial-author-title {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 14px;
 }
 
@@ -2174,7 +2133,7 @@ Service Card
 /* Service Filter */
 .service-filter-btn {
     padding: 14px 20px;
-    border: 1px solid #22be0d;
+    border: 1px solid #6e52c3;
     border-radius: 30px;
     height: 46px;
     line-height: 1;
@@ -2183,17 +2142,17 @@ Service Card
     align-items: center;
     text-align: center;
     font-size: 18px;
-    color: #06131c;
+    color: #fff;
     transition: all 0.3s ease;
 }
 
 .service-filter-btn:hover {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
 .service-filter-btn.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     border-color: transparent;
 }
@@ -2227,12 +2186,12 @@ Service Card
 }
 
 .service-card:hover {
-    border-color: #22be0d;
+    border-color: #6e52c3;
 }
 
 .service-card-wishlist-btn {
     background-color: #fff;
-    color: #22be0d;
+    color: #6e52c3;
     width: 32px;
     height: 32px;
     display: inline-flex;
@@ -2253,20 +2212,20 @@ Service Card
 }
 
 .service-card-price {
-    color: #22be0d;
+    color: #6e52c3;
     font-size: 20px;
 }
 
 .service-card-rating {
     font-size: 16px;
-    color: #5b5b5b;
+    color: #fff;
     line-height: 1;
 }
 
 .service-card-title {
     line-height: 1.4;
     padding: 12px 0;
-    color: #06131c;
+    color: #fff;
     font-size: 18px;
 }
 
@@ -2310,12 +2269,12 @@ Service Card
 
 .service-card-author-name {
     font-size: 18px;
-    color: #06131c;
+    color: #fff;
     line-height: 1;
 }
 
 .service-card-author-name:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .service-card-horizontal {
@@ -2326,7 +2285,7 @@ Service Card
 }
 
 .service-card-horizontal:hover {
-    border: 1px solid #22be0d;
+    border: 1px solid #6e52c3;
 }
 
 .service-card-horizontal .wp-post-image {
@@ -2339,7 +2298,7 @@ Service Card
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .service-card-placeholder {
@@ -2360,7 +2319,7 @@ Service Card
 }
 
 .service-payment-btn.active {
-    border: 1px solid #22be0d;
+    border: 1px solid #6e52c3;
 }
 
 .payment-checked-icon {
@@ -2759,7 +2718,7 @@ Service Card End
 }
 
 .review-progress-bar {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     height: 12px;
     border-radius: 30px;
 }
@@ -2830,14 +2789,14 @@ Freelancer Details Start
 }
 
 .freelancer-tab .tab-btn {
-    border: 1px solid #22be0d;
+    border: 1px solid #6e52c3;
     padding: 14px 28px;
     border-radius: 30px;
-    color: #06131c;
+    color: #fff;
 }
 
 .freelancer-tab .tab-btn.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
@@ -2915,24 +2874,24 @@ Job Details
 }
 
 .job-type {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 14px;
 }
 
 .job-type span {
-    color: #06131c;
+    color: #fff;
     font-size: 14px;
 }
 
 .job-post-title {
     font-size: 24px;
-    color: #06131c;
+    color: #fff;
     line-height: 26px;
 }
 
 .job-company {
     font-size: 16px;
-    color: #06131c;
+    color: #fff;
 }
 
 .job-post-date,
@@ -2948,7 +2907,7 @@ Job Details
 
 .job-post-date {
     background-color: #e3ffdf;
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .job-location {
@@ -2958,17 +2917,17 @@ Job Details
 
 .job-wage {
     font-size: 24px;
-    color: #06131c;
+    color: #fff;
 }
 
 .job-description-title {
     font-size: 18px;
-    color: #06131c;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .job-desc {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 16px;
     line-height: 26px;
 }
@@ -3022,7 +2981,7 @@ Job Details
 }
 
 .proposal-input-container .proposal-form-label {
-    color: #06131c;
+    color: #fff;
     margin-bottom: 10px;
     display: block;
 }
@@ -3092,7 +3051,7 @@ Job Details End
 /* About Company */
 .about-desc {
     font-size: 16px;
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .about-list {
@@ -3101,7 +3060,7 @@ Job Details End
 }
 
 .about-list-item {
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .ceo-avatar {
@@ -3179,7 +3138,7 @@ Accordion Start
 }
 
 .faq-accordions .accordion .accordion-item .accordion-button:not(.collapsed) {
-    color: #22be0d;
+    color: #6e52c3;
     background-color: white;
 }
 
@@ -3219,7 +3178,7 @@ Blog Page Start
 }
 
 .blog-date {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     border-radius: 30px;
     line-height: 1;
     font-size: 16px;
@@ -3236,7 +3195,7 @@ Blog Page Start
 .blog-title a {
     font-size: 24px;
     line-height: 1.3;
-    color: #06131c;
+    color: #fff;
     position: relative;
     background-image: linear-gradient(#000000, #000000),
         linear-gradient(#ffffff, #ffffff);
@@ -3251,7 +3210,7 @@ Blog Page Start
 }
 
 .blog-link:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .pagination-link {
@@ -3262,17 +3221,17 @@ Blog Page Start
     align-items: center;
     border-radius: 50%;
     border: 1px solid #edebe7;
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .pagination-link:hover {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     border: transparent;
 }
 
 .pagination-link.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     border: transparent;
     color: #fff;
 }
@@ -3324,12 +3283,12 @@ Blog Page Start
 }
 
 .blog-tags-wrapper .blog-tag {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 16px;
 }
 
 .blog-tags-wrapper .blog-tag:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 
@@ -3383,11 +3342,11 @@ Blog Page Start
 
 /* Social Links */
 .social-links a {
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .social-links a:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .blog-single-comment {
@@ -3400,7 +3359,7 @@ Blog Page Start
 }
 
 .comment-reply-btn {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .comment-reply {
@@ -3417,7 +3376,7 @@ Blog Page Start
     border-radius: 30px;
     padding: 14px 28px;
     border: 1px solid #ededed;
-    color: #06131c;
+    color: #fff;
 }
 
 .comment-form-input .form-control::placeholder {
@@ -3431,7 +3390,7 @@ Blog Page Start
 }
 
 .comment-form-btn {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     padding: 16px 32px;
     border-radius: 30px;
@@ -3449,12 +3408,12 @@ Subscription Plan Start
 
 .price-tabs .price-tab-link {
     background-color: #fff;
-    color: #5b5b5b;
+    color: #fff;
     padding: 12px 24px;
 }
 
 .price-tabs .price-tab-link.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
@@ -3468,7 +3427,7 @@ Subscription Plan Start
 }
 
 .plan-table:hover {
-    border-color: #22be0d;
+    border-color: #6e52c3;
 }
 
 .plan-header {
@@ -3490,12 +3449,12 @@ Subscription Plan Start
 }
 
 .plan-footer-btn:hover {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
 .popular-plan {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     position: absolute;
     display: inline-block;
     top: 11px;
@@ -3542,7 +3501,7 @@ Job Post
     border-radius: 30px;
     height: 48px;
     color: #fff;
-    background-color: #22be0d;
+    background-color: #6e52c3;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3561,7 +3520,7 @@ Job Post
 }
 
 .tab-link.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
@@ -3573,14 +3532,14 @@ Job Post End
 Contact Page
 ********************/
 .contact-widget-item .contact-widget-title {
-    color: #06131c;
+    color: #fff;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 .contact-widget-item .contact-widget-info {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 18px;
     line-height: 28px;
 }
@@ -3588,11 +3547,11 @@ Contact Page
 .contact-form-title {
     font-size: 24px;
     font-weight: 700;
-    color: #06131c;
+    color: #fff;
 }
 
 .contact-form-desc {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 16px;
     line-height: 26px;
 }
@@ -3617,7 +3576,7 @@ Contact Page
 
 .w-form-btn-inline {
     display: inline-block;
-    background-color: #22be0d;
+    background-color: #6e52c3;
     border-radius: 30px;
     color: #fff;
     padding: 14px 28px;
@@ -3633,11 +3592,11 @@ Contact Page
 }
 
 .contact-social-links a {
-    color: #06131c;
+    color: #fff;
 }
 
 .contact-social-links a:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 /*******************
@@ -3666,11 +3625,11 @@ Login Pages Start
 }
 
 .form-input .form-check-label {
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .form-forget-pass {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .form-divider {
@@ -3680,7 +3639,7 @@ Login Pages Start
 .w-form-btn {
     width: 100%;
     border-radius: 30px;
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     padding: 14px 20px;
     display: block;
@@ -3691,8 +3650,8 @@ Login Pages Start
     width: 100%;
     border-radius: 30px;
     background-color: transparent;
-    color: #06131c;
-    border: 1px solid #22be0d;
+    color: #fff;
+    border: 1px solid #6e52c3;
     padding: 14px 20px;
     display: block;
     text-align: center;
@@ -3701,7 +3660,7 @@ Login Pages Start
 .form-divider-text {
     background: #fff;
     position: absolute;
-    color: #06131c;
+    color: #fff;
     width: 30px;
     padding: 4px;
 }
@@ -3715,7 +3674,7 @@ Login Pages Start
     align-items: center;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
-    color: #06131c;
+    color: #fff;
 }
 
 .social-login .social-login-item:hover {
@@ -3724,11 +3683,11 @@ Login Pages Start
 }
 
 .form-text a {
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .form-text a {
-    color: #06131c;
+    color: #fff;
 }
 
 .social-login .social-login-item i {
@@ -3762,17 +3721,17 @@ Dashboard CSS Start
     gap: 16px;
     font-size: 18px;
     align-items: center;
-    color: #5b5b5b;
+    color: #fff;
     font-size: 16px;
 }
 
 .sidebar-nav-link.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
 .sidebar-nav-link svg {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .sidebar-nav-link.active svg {
@@ -3804,7 +3763,7 @@ Dashboard CSS Start
     background-color: rgba(34, 190, 13, 0.2);
     font-weight: 600;
     font-size: 16px;
-    color: #06131c;
+    color: #fff;
     padding: 20px 10px;
     white-space: nowrap;
 }
@@ -3881,21 +3840,21 @@ Dashboard CSS Start
     align-items: center;
     border: 1px solid #e2ffde;
     border-radius: 30px;
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .applicant-link:hover {
     background-color: #e0fddc;
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .project-link {
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .project-link:hover {
     text-decoration: underline;
-    color: #06131c;
+    color: #fff;
 }
 
 /* Dashboard Header */
@@ -3919,12 +3878,12 @@ Dashboard CSS Start
     font-size: 14px;
     border-radius: 50%;
     color: #fff;
-    background-color: #22be0d;
+    background-color: #6e52c3;
     top: 0;
 }
 
 .dashboard-profile .dashboard-profile-ite {
-    color: #5b5b5b;
+    color: #fff;
     padding: 10px;
 }
 
@@ -3966,7 +3925,7 @@ Dashboard CSS Start
 }
 
 .see-notification-btn {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     padding: 12px 20px;
     border-radius: 5px;
@@ -4004,8 +3963,8 @@ Dashboard CSS Start
 
 .gig-status .form-check-input:checked,
 .gig-title-switch .form-check-input:checked {
-    background-color: #22be0d;
-    border-color: #22be0d;
+    background-color: #6e52c3;
+    border-color: #6e52c3;
 }
 
 .gig-info-header,
@@ -4128,12 +4087,12 @@ Dashboard CSS Start
 }
 
 .sub-menu.table-dropdown {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 14px;
 }
 
 .sub-menu.table-dropdown:hover {
-    color: #22be0d;
+    color: #6e52c3;
     background: none;
 }
 
@@ -4154,16 +4113,16 @@ Dashboard CSS Start
 
 .status-badge.in-progress {
     background-color: #e2ffde;
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .status-badge.canceled {
     background-color: #ffe2e2;
-    color: #5b5b5b;
+    color: #fff;
 }
 
 .status-badge.active {
-    color: #22be0d;
+    color: #6e52c3;
     background-color: #ddffe6;
 }
 
@@ -4182,13 +4141,13 @@ Dashboard CSS Start
     background-color: #fff;
     border-radius: 30px;
     padding: 16px 32px;
-    color: #5b5b5b;
+    color: #fff;
     font-size: 18px;
     line-height: 1;
 }
 
 .dashboard-tab-btn.active {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
 }
 
@@ -4199,7 +4158,7 @@ Dashboard CSS Start
 
 .form-container .form-label {
     font-size: 18px;
-    color: #06131c;
+    color: #fff;
     line-height: 18px;
     margin-bottom: 10px;
 }
@@ -4275,7 +4234,7 @@ Dashboard CSS Start
 }
 
 .msg-send-btn {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     padding: 16px 28px;
     border-radius: 30px;
     color: #fff;
@@ -4461,7 +4420,7 @@ Footer
 }
 
 .footer-newsletter-form .form-control:focus {
-    border: 1px solid #22be0d;
+    border: 1px solid #6e52c3;
 }
 
 .footer-newsletter-form .form-control::placeholder {
@@ -4469,7 +4428,7 @@ Footer
 }
 
 .footer-newsletter-btn {
-    background-color: #22be0d;
+    background-color: #6e52c3;
     color: #fff;
     padding: 16px 32px;
     font-size: 18px;
@@ -4501,7 +4460,7 @@ Footer
 }
 
 .footer-nav-list .footer-nav-list-item .footer-nav-link:hover {
-    color: #22be0d;
+    color: #6e52c3;
 }
 
 .footer-nav-list .footer-nav-list-item .footer-nav-link svg {

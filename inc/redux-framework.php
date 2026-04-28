@@ -246,7 +246,7 @@
                 'title'    => esc_html__('Secondary Color', 'streamvault'), 
                 'subtitle' => esc_html__('Pick a color for the theme (default: #1778F2).', 'streamvault'),
                 'validate' => 'color',
-                'default'  => '#1778F2'
+                'default'  => '#6E52C3'
             ),
 
             array(
