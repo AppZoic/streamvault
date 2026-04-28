@@ -220,14 +220,23 @@
         'icon'   => 'el el-edit',
         'fields' => array(
             array(
+                'id'       => 'bg_color',
+                'type'     => 'color',
+                'title'    => esc_html__('Background Color', 'streamvault'), 
+                'subtitle' => esc_html__('Pick a background color for the theme', 'streamvault'),
+                'validate' => 'color',
+                'default'  => '#05051e'
+
+            ),
+            array(
                 'id'       => 'primary_color',
                 'type'     => 'color_gradient',
                 'title'    => esc_html__('Primary Color', 'streamvault'), 
                 'subtitle' => esc_html__('Pick a color for the theme (default: #007efa and #4ba6ff).', 'streamvault'),
                 'validate' => 'color',
                 'default'  => array(
-                    'from' => '#22be0d',
-                    'to'   => '#22be0d',
+                    'from' => '#6e52c3',
+                    'to'   => '#6e52c3',
                 ),
 
             ),  

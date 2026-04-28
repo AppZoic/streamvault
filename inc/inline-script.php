@@ -4,9 +4,9 @@ function streamvault_inline_style() {
     ob_start();
     global $streamvault_opt;
 
-    $primary_color_from = !empty($streamvault_opt['primary_color']['from']) ? $streamvault_opt['primary_color']['from'] : '#1DBF73';
-    $primary_color_to = !empty($streamvault_opt['primary_color']['to']) ? $streamvault_opt['primary_color']['to'] : '#1DBF73';
-    $secondary_color = !empty($streamvault_opt['secondary_color']) ? $streamvault_opt['secondary_color'] : '#1DBF73'; ?>
+    $primary_color_from = !empty($streamvault_opt['primary_color']['from']) ? $streamvault_opt['primary_color']['from'] : '#6e52c3';
+    $primary_color_to = !empty($streamvault_opt['primary_color']['to']) ? $streamvault_opt['primary_color']['to'] : '#6e52c3';
+    $secondary_color = !empty($streamvault_opt['secondary_color']) ? $streamvault_opt['secondary_color'] : '#6e52c3'; ?>
 	
 	.edit-btn , .single-product .product_meta .tagged_as a:hover, .single-product .product_meta .posted_in a:hover, .woocommerce.single-product .onsale, .single_add_to_cart_button, .dashboard-main .button-secondary,.dashboard-main button, #loading .object {
 		background: <?php echo esc_attr( $primary_color_from ) ?>;
