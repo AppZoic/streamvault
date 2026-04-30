@@ -2084,20 +2084,6 @@ Business Widget End
     color: #fff;
 }
 
-.freelancer-tab-link {
-    background-color: #13544e;
-    color: #fff;
-    width: 44px;
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-}
-
-.freelancer-tab-link.active {
-    background-color: #6e52c3;
-}
 
 /* Top Seller Card End*/
 
