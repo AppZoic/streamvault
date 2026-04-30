@@ -1711,34 +1711,69 @@ Hero End
 /******************
 Feature Categories 
 *******************/
-.feature-category-card {
+.video-category-card {
+    position: relative;
     border-radius: 16px;
     padding: 40px 32px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease-in-out;
     height: 230px;
-    background-color: #4b83fc;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.feature-category-link a {
+/* Dark overlay for better text readability */
+.video-category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease-in-out;
+}
+
+.video-category-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.video-category-link {
+    margin: 0 0 10px 0;
+}
+
+.video-category-title {
     font-size: 18px;
+    font-weight: 600;
     color: #fff;
-    display: block;
-    margin-bottom: 10px;
-    white-space: nowrap;
+    text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
-.feature-category-link a:hover {
+.video-category-title:hover {
     color: #6e52c3;
 }
 
-.feature-category-desc {
+.video-category-desc {
     color: #fff;
+    font-size: 14px;
+    margin: 0;
 }
 
-.feature-category-card:hover {
-    border-color: #6e52c3;
+/* Hover effect - darken overlay */
+.video-category-card:hover .category-overlay {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.video-category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /**********************

@@ -583,63 +583,63 @@
         )
     ) );
 
-    // Service Page
+    // Video Page
     Redux::setSection( $opt_name, array(
-        'title' => esc_html__( 'Service Page', 'streamvault' ),
-        'id'    => 'service_page',
+        'title' => esc_html__( 'Video Page', 'streamvault' ),
+        'id'    => 'video_page',
         'icon'  => 'el el-file-edit',
         'fields'     => array(            
             array(
-                'id'       => 'service_auto_approval',
+                'id'       => 'video_auto_approval',
                 'type'     => 'switch',
-                'title'    => esc_html__( 'Service Auto Approval', 'streamvault' ),
+                'title'    => esc_html__( 'Video Auto Approval', 'streamvault' ),
                 'default'  => true,
             ),
             array(
-                'id' => 'streamvault_service_per_page',
+                'id' => 'streamvault_videos_per_page',
                 'type' => 'slider',
-                'title' => esc_html__( 'Services Per Page', 'streamvault' ),
-                'subtitle' => esc_html__( 'Service per page', 'streamvault' ),
-                'desc' => esc_html__('Number of Services to display. Min: 1, max: Unlimited, step: 1, default value: 4', 'streamvault'),
-                "default" => 9,
+                'title' => esc_html__( 'Videos Per Page', 'streamvault' ),
+                'subtitle' => esc_html__( 'Video per page', 'streamvault' ),
+                'desc' => esc_html__('Number of videos to display. Min: 1, max: Unlimited, step: 1, default value: 4', 'streamvault'),
+                "default" => 12,
                 "min" => 1,
                 "step" => 1,
                 "max" => 10000,
                 'display_value' => 'text'
             ),
             array(
-                'id'       => 'related_services',
+                'id'       => 'related_videos',
                 'type'     => 'switch',
-                'title'    => esc_html__( 'Show Related service', 'streamvault' ),
+                'title'    => esc_html__( 'Show Related video', 'streamvault' ),
                 'default'  => true,
             ),
             array(
-                'id'       => 'related_service_title',
+                'id'       => 'related_video_title',
                 'type'     => 'text',
-                'title'    => esc_html__( 'Related service Title', 'streamvault' ),
-                'required' => array( 'related_services','equals', true ),
-                'default'  => esc_html__( 'Related service', 'streamvault' ),
+                'title'    => esc_html__( 'Related video Title', 'streamvault' ),
+                'required' => array( 'related_videos','equals', true ),
+                'default'  => esc_html__( 'Related video', 'streamvault' ),
             ),
             array(
-                'id' => 'services_per_page',
+                'id' => 'videos_per_page',
                 'type' => 'slider',
-                'title' => esc_html__( 'Related Services', 'streamvault' ),
-                'subtitle' => esc_html__( 'Related services per page', 'streamvault' ),
-                'desc' => esc_html__('Number of related services to display. Min: 1, max: Unlimited, step: 1, default value: 4', 'streamvault'),
+                'title' => esc_html__( 'Related videos', 'streamvault' ),
+                'subtitle' => esc_html__( 'Related videos per page', 'streamvault' ),
+                'desc' => esc_html__('Number of related videos to display. Min: 1, max: Unlimited, step: 1, default value: 4', 'streamvault'),
                 "default" => 4,
                 "min" => 1,
                 "step" => 1,
                 "max" => 10000,
-                'required' => array( 'related_services','equals', true ),
+                'required' => array( 'related_videos','equals', true ),
                 'display_value' => 'text'
             ),
             array(
-                'id'       => 'related_services_columns',
+                'id'       => 'related_videos_columns',
                 'type'     => 'select',
-                'title'    => esc_html__( 'services Column', 'streamvault' ), 
+                'title'    => esc_html__( 'videos Column', 'streamvault' ), 
                 'subtitle' => esc_html__( 'Number of column', 'streamvault' ),
-                'desc'     => esc_html__( 'Specify the number of related services column.', 'streamvault' ),
-                'required' => array( 'related_services','equals', true ),
+                'desc'     => esc_html__( 'Specify the number of related videos column.', 'streamvault' ),
+                'required' => array( 'related_videos','equals', true ),
                 'options'  => array(
                     '12' => esc_html__( 'One Column','streamvault' ), 
                      '6' => esc_html__( 'Two Columns','streamvault' ), 

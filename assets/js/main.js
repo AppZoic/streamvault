@@ -46,6 +46,13 @@
 
     // ----- Player DOM elements via jQuery -----
     const video = $('#mainVideo')[0];
+
+    // Check if video element exists
+    if (!video) {
+        console.log('Video element not found!');
+        return;
+    }
+
     const $playPause = $('#playPauseBtn');
     const $timeDisplay = $('#timeDisplay');
     const $seekSlider = $('#seekSlider');
@@ -59,7 +66,7 @@
 
     // ----- helper functions -----
     function formatTime(seconds) {
-        if (isNaN(seconds) || !isFinite(seconds)) return "0:00";
+        if (isNaN(seconds) || !isFinite(seconds) || seconds < 0) return "0:00";
         const mins = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
         return `${mins}:${secs.toString().padStart(2, '0')}`;
@@ -99,13 +106,27 @@
         }
     }
 
+    function updateLikeDisplay() {
+        if (currentLikes >= 1000) {
+            if (currentLikes >= 1000000) {
+                $likeCountSpan.text(`${(currentLikes / 1000000).toFixed(1)}M`);
+            } else {
+                $likeCountSpan.text(`${(currentLikes / 1000).toFixed(1)}K`);
+            }
+        } else {
+            $likeCountSpan.text(currentLikes);
+        }
+    }
+
     // ----- event bindings using jQuery -----
     $(video).on('timeupdate', updateTimeUI);
+
     $(video).on('loadedmetadata', function() {
         updateTimeUI();
         $seekSlider.attr('max', video.duration);
         $timeDisplay.text(`0:00 / ${formatTime(video.duration)}`);
     });
+
     $(video).on('play', () => updatePlayPauseIcon(true));
     $(video).on('pause', () => updatePlayPauseIcon(false));
 
@@ -135,62 +156,73 @@
         }
         updateVolumeIcon();
     });
+
     // initialize volume
     video.volume = 0.7;
     $volumeRange.val(0.7);
     updateVolumeIcon();
 
-    // fullscreen (with FontAwesome icon toggle optional)
+    // fullscreen
     $fullscreen.on('click', function() {
         const wrapper = $('.video-wrapper')[0];
         if (!document.fullscreenElement) {
-            wrapper.requestFullscreen().catch(err => console.log(err));
+            if (wrapper.requestFullscreen) {
+                wrapper.requestFullscreen().catch(err => console.log(err));
+            } else if (wrapper.webkitRequestFullscreen) { /* Safari */
+                wrapper.webkitRequestFullscreen();
+            } else if (wrapper.msRequestFullscreen) { /* IE/Edge */
+                wrapper.msRequestFullscreen();
+            }
         } else {
-            document.exitFullscreen();
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
         }
     });
 
     // Like button logic with dynamic counter
     let liked = false;
     let currentLikes = 12000;
-    $likeCountSpan.text('12K');
+    updateLikeDisplay();
 
     $likeBtn.on('click', function() {
         liked = !liked;
         if (liked) {
             currentLikes += 100;
-            if (currentLikes >= 1000) {
-                $likeCountSpan.text(`${(currentLikes / 1000).toFixed(1)}K`);
-            } else {
-                $likeCountSpan.text(currentLikes);
-            }
             $likeBtn.addClass('liked');
             $likeBtn.find('i').removeClass('far').addClass('fas');
+
+            // If disliked was active, reset it
+            if (disliked) {
+                disliked = false;
+                $('#dislikeBtn').removeClass('liked');
+                $('#dislikeBtn').find('i').removeClass('fas').addClass('far');
+            }
         } else {
             currentLikes -= 100;
-            if (currentLikes >= 1000) {
-                $likeCountSpan.text(`${(currentLikes / 1000).toFixed(0)}K`);
-            } else {
-                $likeCountSpan.text(currentLikes);
-            }
             $likeBtn.removeClass('liked');
             $likeBtn.find('i').removeClass('fas').addClass('far');
         }
+        updateLikeDisplay();
     });
 
-    // Dislike button (demo, just visual toggles)
+    // Dislike button
     let disliked = false;
     $('#dislikeBtn').on('click', function() {
         disliked = !disliked;
         if (disliked) {
-            $(this).addClass('liked'); // reuse same effect style
+            $(this).addClass('liked');
             $(this).find('i').removeClass('far').addClass('fas');
-            // if liked was active, reset like state (optional UX)
+
+            // If liked was active, reset it
             if (liked) {
                 liked = false;
                 currentLikes -= 100;
-                if (currentLikes >= 1000) $likeCountSpan.text(`${(currentLikes / 1000).toFixed(0)}K`);
-                else $likeCountSpan.text(currentLikes);
+                updateLikeDisplay();
                 $likeBtn.removeClass('liked');
                 $likeBtn.find('i').removeClass('fas').addClass('far');
             }
@@ -200,47 +232,54 @@
         }
     });
 
-    // Share button alert (demo)
+    // Share button alert
     $('#shareBtn').on('click', function() {
         alert('✨ Share this amazing video with your friends! (demo)');
     });
 
-    // optional: handle video ended - reset play button (do nothing fancy but keep UX)
+    // Handle video ended
     $(video).on('ended', function() {
         updatePlayPauseIcon(false);
-        // you could add autoplay next, but it's a clean standalone player
     });
 
-    // Edge: if user clicks on video wrapper also toggles play/pause
+    // Handle video errors
+    $(video).on('error', function() {
+        console.error('Video failed to load');
+        $timeDisplay.text('Error loading video');
+    });
+
+    // Click on video wrapper toggles play/pause
     $('.video-wrapper').on('click', function(e) {
-        // avoid conflict if click target is control button
+        // Avoid conflict if click target is control button
         if ($(e.target).closest('.ctrl-btn').length || $(e.target).closest('input').length) return;
         togglePlayPause();
     });
 
-    // Add small effect: dynamic tooltip for volume?
-    console.log('🔥 FLOW premium video player ready | FontAwesome + jQuery');
-
-    // bonus: spacebar support
+    // Keyboard shortcuts
     $(document).on('keydown', function(e) {
+        // Spacebar
         if (e.code === 'Space' && document.activeElement !== $('input')[0]) {
             e.preventDefault();
             togglePlayPause();
         }
+        // Left arrow - back 5 seconds
         if (e.code === 'ArrowLeft') {
             e.preventDefault();
             video.currentTime = Math.max(0, video.currentTime - 5);
             updateTimeUI();
         }
+        // Right arrow - forward 5 seconds
         if (e.code === 'ArrowRight') {
             e.preventDefault();
             video.currentTime = Math.min(video.duration, video.currentTime + 5);
             updateTimeUI();
         }
+        // F key - fullscreen
         if (e.code === 'KeyF') {
             e.preventDefault();
             $fullscreen.click();
         }
+        // M key - mute
         if (e.code === 'KeyM') {
             e.preventDefault();
             $volumeBtn.click();

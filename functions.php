@@ -701,7 +701,7 @@ function streamvault_start_session(){
 add_action('init', 'streamvault_start_session', 1);
 
 
-function streamvault_pagination($post_query = null, $total_pages = null, $total_items = null, $items_per_page = 10) {
+function streamvault_pagination($post_query = null, $total_pages = null, $total_items = null, $items_per_page = 10, $use_ajax = false) {
     global $wp_query;
 
     // Calculate the total pages if total items are provided
@@ -723,12 +723,20 @@ function streamvault_pagination($post_query = null, $total_pages = null, $total_
 
         // Previous button
         if ($current_page > 1) {
-            echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link prev" href="' . get_pagenum_link($current_page - 1) . '">Previous</a></li>';
+            if ($use_ajax) {
+                echo '<li class="custom-page-item page-item"><a href="#" data-page="' . ($current_page - 1) . '" class="custom-page-link page-link ajax-pagination prev">Previous</a></li>';
+            } else {
+                echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link prev" href="' . get_pagenum_link($current_page - 1) . '">Previous</a></li>';
+            }
         }
 
         // Display first page
         if ($current_page > 3) {
-            echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link" href="' . get_pagenum_link(1) . '">1</a></li>';
+            if ($use_ajax) {
+                echo '<li class="custom-page-item page-item"><a href="#" data-page="1" class="custom-page-link page-link ajax-pagination">1</a></li>';
+            } else {
+                echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link" href="' . get_pagenum_link(1) . '">1</a></li>';
+            }
             if ($current_page > 4) {
                 echo '<li class="custom-page-item page-item disabled"><span class="custom-page-link page-link">...</span></li>';
             }
@@ -739,7 +747,11 @@ function streamvault_pagination($post_query = null, $total_pages = null, $total_
             if ($i == $current_page) {
                 echo '<li class="custom-page-item page-item active" aria-current="page"><a class="custom-page-link page-link" href="#">' . $i . '</a></li>';
             } else {
-                echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link" href="' . get_pagenum_link($i) . '">' . $i . '</a></li>';
+                if ($use_ajax) {
+                    echo '<li class="custom-page-item page-item"><a href="#" data-page="' . $i . '" class="custom-page-link page-link ajax-pagination">' . $i . '</a></li>';
+                } else {
+                    echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link" href="' . get_pagenum_link($i) . '">' . $i . '</a></li>';
+                }
             }
         }
 
@@ -748,12 +760,20 @@ function streamvault_pagination($post_query = null, $total_pages = null, $total_
             if ($current_page < $total_pages - 3) {
                 echo '<li class="custom-page-item page-item disabled"><span class="custom-page-link page-link">...</span></li>';
             }
-            echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link" href="' . get_pagenum_link($total_pages) . '">' . $total_pages . '</a></li>';
+            if ($use_ajax) {
+                echo '<li class="custom-page-item page-item"><a href="#" data-page="' . $total_pages . '" class="custom-page-link page-link ajax-pagination">' . $total_pages . '</a></li>';
+            } else {
+                echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link" href="' . get_pagenum_link($total_pages) . '">' . $total_pages . '</a></li>';
+            }
         }
 
         // Next button
         if ($current_page < $total_pages) {
-            echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link next" href="' . get_pagenum_link($current_page + 1) . '">Next</a></li>';
+            if ($use_ajax) {
+                echo '<li class="custom-page-item page-item"><a href="#" data-page="' . ($current_page + 1) . '" class="custom-page-link page-link ajax-pagination next">Next</a></li>';
+            } else {
+                echo '<li class="custom-page-item page-item"><a class="custom-page-link page-link next" href="' . get_pagenum_link($current_page + 1) . '">Next</a></li>';
+            }
         }
 
         echo '</ul>
