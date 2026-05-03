@@ -357,49 +357,23 @@ body {
     color: #6e52c3;
 }
 
-.w-btn-primary-xl {
-    background: #fff;
-    border-radius: 50px;
+.streamvault-btn {
+    background: #f7f5f0;
+    border-radius: 10px;
     text-align: center;
-    padding: 16px 60px;
+    padding: 17px 45px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     color: #fff;
+    line-height: 1;
     gap: 10px;
-    flex-shrink: none;
-    line-height: 26px;
-    font-size: 18px;
+    transition: all 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
-    white-space: nowrap;
 }
 
-.w-btn-secondary-xl {
-    background-color: #6e52c3;
-    color: #fff;
-    padding: 16px 60px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 30px;
-    flex-shrink: none;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.footer-newsletter-btn::before,
-.hero-form-btn::before,
-.w-btn-secondary-sm::before,
-.w-btn-black-lg::before,
-.w-btn-blue-lg::before,
-.cta-btn-link::before,
-.w-btn-secondary-lg::before,
-.w-btn-secondary-xl::before,
-.w-btn-primary-lg::before,
-.w-btn-primary-xl::before {
+.streamvault-btn::before {
     content: "";
     position: absolute;
     width: 100px;
@@ -413,40 +387,50 @@ body {
     opacity: 0.6;
 }
 
-.footer-newsletter-btn:hover::before,
-.hero-form-btn:hover::before,
-.w-btn-secondary-sm:hover::before,
-.w-btn-black-lg:hover::before,
-.w-btn-blue-lg:hover::before,
-.cta-btn-link:hover::before,
-.w-btn-secondary-lg:hover::before,
-.w-btn-secondary-xl:hover::before,
-.w-btn-primary-lg:hover::before,
-.w-btn-primary-xl:hover::before {
+.streamvault-btn:hover::before {
     animation: shine 1.5s ease-out infinite;
 }
-
-.w-btn-secondary-xl:hover,
-.w-btn-primary-lg:hover,
-.w-btn-primary-xl:hover {
-    background-color: #6e52c3;
-    color: #fff;
-}
-
-.w-btn-primary-lg {
-    background: #f7f5f0;
-    border-radius: 50px;
+.streamvault-btn-outline {
+    background: transparent;
+    border: 1px solid #f7f5f0;
+    border-radius: 10px;
     text-align: center;
     padding: 17px 45px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #f7f5f0;
     line-height: 1;
     gap: 10px;
     transition: all 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
+}
+
+.streamvault-btn-outline::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+}
+
+/* Hover effects */
+.streamvault-btn-outline:hover {
+    background: #f7f5f0;
+    color: #000;
+}
+
+.streamvault-btn-outline:hover::before {
+    animation: shine 1.5s ease-out infinite;
 }
 
 .not-found-img {
