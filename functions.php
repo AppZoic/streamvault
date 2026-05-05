@@ -44,6 +44,7 @@ if ( ! function_exists( 'streamvault_setup' ) ) :
 		add_image_size( 'streamvault-131x190', 131,190,true );
 		add_image_size( 'streamvault-200x300', 200,300,true );
 		add_image_size( 'streamvault-100x100', 100,100,true );
+		add_image_size( 'streamvault-300x300', 300,300,true );
 		add_image_size( 'streamvault-80x80', 80,80,true );
 		add_image_size( 'streamvault-32x32', 32,32,true );
 	}
