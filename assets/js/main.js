@@ -3,7 +3,7 @@
 
     $(window).on('load', function(event) {
         $('#loading').delay(350).fadeOut('slow');
-    })
+    });
 
     /*====================================
         Mobile Menu
